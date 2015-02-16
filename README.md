@@ -14,7 +14,7 @@ All Below formats will be able to display of a string
 
 <h1>Requirements</h1>
 <ul>
-  <li>jQuery(> 1.4)</li>
+  <li>jQuery(greater or eq 1.4)</li>
 </ul>
 
 Installation
