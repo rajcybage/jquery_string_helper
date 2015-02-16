@@ -29,17 +29,13 @@
 
   $.fn.underscore = function(s){
    	if(typeof s == "string"){
-      var i=0;
-      var word = "";
-      for(var i =0, len = s.length ; i < len; i++){
-        ch = s[i];
-        if(ch.match(/[A-Z]/) && i > 0 && s[i-1] != ":"){
-          ch = "_" + ch
-        }
-        word += ch.toLowerCase();
-      }
-    return word.replace(" ", "_").replace("::", "/"); 
-   	}
+        underscorize(s);
+
+    	}
+    else{
+      return "Please input a string";
+    }
+      
    };
 
    $.fn.classify = function(name){
@@ -53,6 +49,14 @@
 
    $.fn.ordinalize = function(number){
     return number.toString() + ordinal(number);
+   };
+
+   $.fn.demodulize = function(path){
+      return demodule(path);
+   };
+
+   $.fn.foreignKey = function(s, underscore){
+      return underscorize(demodule(s)) + (underscorize == true ? "_id" : "id")
    };
 
    function ordinal(number){
@@ -100,7 +104,38 @@
       return "Please enter a string";
     }  
  
+  };
+  
+  function underscorize(s){
+      var i=0;
+      var word = "";
+      for(var i =0, len = s.length ; i < len; i++){
+        ch = s[i];
+        if(ch.match(/[A-Z]/) && i > 0 && s[i-1] != ":"){
+          ch = "_" + ch
+        }
+        word += ch.toLowerCase();
+      }
+    return word.replace(" ", "_").replace("::", "/"); 
+
+  };
+
+  function demodule(s){
+    var str = s.toString();
+    var text = "";
+    var i = s.lastIndexOf("::");
+    if(i >= 0){
+      for(i = i+2; i <= s.length - 1; i++){
+        text += s[i]
+      } 
+    }
+    else{
+       text = text
+    }
+    return text
   }
 
 }(jQuery));
+
+
 
