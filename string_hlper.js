@@ -66,9 +66,3 @@
 
 }(jQuery));
 
-$("*").camelize("active_model");
-$("*").camelize("active_model/errors");
-
-$("*").underscore("ActiveModel");
-$("*").underscore("ActiveModel::Errors");
-$("*").classify('calculus');
