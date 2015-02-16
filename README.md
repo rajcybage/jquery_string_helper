@@ -16,7 +16,7 @@ Installation
 
 2)Include plugin's code:
 
-    <script src="http://github.com/rajcybage/jquery_string_helper.js"></script>
+    <script src="http://github.com/rajcybage/string_helper.js"></script>
 
 
 Just Begins to add some String Helper Methods for Jquery
