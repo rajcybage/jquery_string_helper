@@ -33,5 +33,6 @@ Just Begins to add some String Helper Methods for Jquery
     $().classify('calculus'); #Calculus<
     $().camelize("active_model"); #"Active Model"
     $().camelize("active_model/errors") #"ActiveModel::Errors"
-
+    $().foreignKey("Admin::Post", true) # post_id
+    $().foreignKey("Admin::Post", false) # postid
     $().dasherize("pam_pal") #"pam-pal"
