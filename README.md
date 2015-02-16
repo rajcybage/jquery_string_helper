@@ -42,3 +42,14 @@ Just Begins to add some String Helper Methods for Jquery
     $().foreignKey("Admin::Post", true) # post_id
     $().foreignKey("Admin::Post", false) # postid
     $().dasherize("pam_pal") #"pam-pal"
+   
+   
+    
+## Contributing
+
+1. Fork it ( https://github.com/rajcybage/jquery_string_helper/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+    
