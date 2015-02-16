@@ -35,8 +35,9 @@ Just Begins to add some String Helper Methods for Jquery
 
     $().underscore("ActiveModel");#"active_model"  
     $().ordinalize(1000) #"1000th"
+    $().ordinalize(3)   #"3rd"
     $().underscore("ActiveModel::Errors"); #"active_model/errors"
-    $().classify('calculus'); #Calculus<
+    $().classify('calculus'); #Calculus
     $().camelize("active_model"); #"Active Model"
     $().camelize("active_model/errors") #"ActiveModel::Errors"
     $().foreignKey("Admin::Post", true) # post_id
