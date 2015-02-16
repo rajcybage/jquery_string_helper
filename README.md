@@ -1,8 +1,10 @@
 # jquery_string_helper
 
+We use same Ruby on Rails Active support string helper methods to make it easy on string operation.
+
 #A Jquery Plugins For Some String Helper methods Like Camelize, Underscore, Dasherize, Classify, Ordinalize 
 
-We use same Ruby on Rails Active support string helper methods to make it easy on string operation.
+
 
 <h1>Requirements</h1>
 <ul>
