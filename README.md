@@ -1,5 +1,8 @@
 # jquery_string_helper
-A Jquery Plugins For Some String Helper methods 
+
+#A Jquery Plugins For Some String Helper methods Like Camelize, Underscore, Dasherize, Classify, Ordinalize 
+
+We use same Ruby on Rails Active support string helper methods to make it easy on string operation.
 
 <h1>Requirements</h1>
 <ul>
@@ -23,11 +26,10 @@ Just Begins to add some String Helper Methods for Jquery
 
 
     $().underscore("ActiveModel");#"active_model"  
-  
-  
+    $().ordinalize(1000) #"1000th"
     $().underscore("ActiveModel::Errors"); #"active_model/errors"
-    
     $().classify('calculus'); #Calculus<
-  
     $().camelize("active_model"); #"Active Model"
+    $().camelize("active_model/errors") #"ActiveModel::Errors"
 
+    $().dasherize("pam_pal") #"pam-pal"
