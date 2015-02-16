@@ -8,7 +8,7 @@ We use same Ruby on Rails Active support string helper methods to make it easy o
 
 <h1>Requirements</h1>
 <ul>
-  <li>jQuery(> 1.9)</li>
+  <li>jQuery(> 1.4)</li>
 </ul>
 
 Installation
