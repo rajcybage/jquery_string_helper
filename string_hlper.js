@@ -1,3 +1,10 @@
+/*
+* jQuery String Helper - v0.0.1
+*
+* Made by Rajarshi
+* Under MIT License
+*/
+
 (function($){
 	$.fn.showLinkLocation = function(){
 
@@ -12,7 +19,7 @@
 
 	$.fn.camelize = function(s){
     if(s.indexOf("_") > 0){
-      camelization(s);
+      return camelization(s);
     }
     else{
       return "Please enter a string with underscore";
@@ -37,12 +44,43 @@
 
    $.fn.classify = function(name){
     return camelization(name.replace(/.*\./, ''));
-   }
+   };
    	
    $.fn.dasherize = function(s){
-      s.replace('_', '-')
-    end
-   } 
+    return  s.replace('_', '-')
+    
+   }; 
+
+   $.fn.ordinalize = function(number){
+    return number.toString() + ordinal(number);
+   };
+
+   function ordinal(number){
+      var n = Math.abs(parseInt(number));
+      var c = n % 100;
+      var text;
+      if($.inArray(c, [11,12,13])) {
+        text = "th"
+      }
+
+      else{
+
+        switch( n % 10) {
+          case 1: 
+            text = "st";
+          case 2: 
+            text = "nd";
+          case 3: 
+            text = "rd";
+          default: 
+              text = "th";
+
+        }
+
+      }
+    return text
+
+   };
 
 	function debug(object){
 	  if(window.console && window.console.log ) {
