@@ -2,8 +2,14 @@
 
 We use same Ruby on Rails Active support string helper methods to make it easy on string operation.
 
-#A Jquery Plugins For Some String Helper methods Like Camelize, Underscore, Dasherize, Classify, Ordinalize 
+#A Jquery Plugins For Some String Helper methods Like Camelize, Underscore, Dasherize, Classify, Ordinalize, ForeignKey
+All Below formats will be able to display of a string
 
+
+<ul>
+  <li> Camelize</li>
+  <li> Underscore</li> <li>Dasherize</li> <li>Classify</li> <li>Ordinalize</li> <li>ForeignKey</li></ul>
+  
 
 
 <h1>Requirements</h1>
