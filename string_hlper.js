@@ -35,15 +35,20 @@
       var month = $months[d.getMonth() + 1];
       var year  = d.getFullYear();
       return formatDate(format, d, day, month, year);   
-    },
-
-    next: function(){
-      alert(this.month);
     }
-
   });
 
-  $.fn.camelize = function(s){
+	$.fn.showLinkLocation = function(){
+	  return this.each(function(){
+        var link = $(this);
+        link.append("(" + link.attr("href")+")");
+        debug(link);
+	  });
+	  
+	};
+
+
+	$.fn.camelize = function(s){
     if(s.indexOf("_") > 0){
       return camelization(s);
     }
@@ -84,6 +89,10 @@
    $.fn.foreignKey = function(s, underscore){
       return underscorize(demodule(s)) + (underscorize == true ? "_id" : "id")
    };
+
+   $.fn.humanize = function(s){
+      return human(s);
+   }
 
    function ordinal(number){
       var n = Math.abs(parseInt(number));
@@ -165,18 +174,21 @@
 
   };
 
-  function human(s,capitalize){
-    s = str.replace(/\A_+/, '');
-    s = str.replace(/_id\z/, '');
-    s = str.replace('_', ' ');
-    s = str.toLowerCase();
+  function human(s,capitalize = true){
+    s = s.replace(/\A_+/, '');
+    s = s.replace(/_id\z/, '');
+    s = s.replace('_', ' ');
+    s = s.toLowerCase();
     if(capitalize){
-      s.replace(/\A\w/, function(letter){
-         letter.toUpperCase();
+     return s.replace(/\b[a-z]/g, function(letter) {
+         return letter.toUpperCase();
       });
      
     }
-    return s; 
+  else{
+     return s;
+  }
+   
   };
 
   function demodule(s){
@@ -195,5 +207,4 @@
   }
 
 }(jQuery));
-
 
