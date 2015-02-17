@@ -8,7 +8,7 @@ All Below formats will be able to display of a string
 
 <ul>
   <li> Camelize</li>
-  <li> Underscore</li> <li>Dasherize</li> <li>Classify</li> <li>Ordinalize</li> <li>ForeignKey</li></ul>
+  <li> Underscore</li> <li>Dasherize</li> <li>Classify</li> <li>Ordinalize</li> <li>ForeignKey</li><li>Humanize</li><li>Today</li><li>Next Day</li><li>Previos Day</li></ul>
   
 
 
