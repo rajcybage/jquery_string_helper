@@ -43,6 +43,15 @@ Just Begins to add some String Helper Methods for Jquery
     $().foreignKey("Admin::Post", true) # post_id
     $().foreignKey("Admin::Post", false) # postid
     $().dasherize("pam_pal") #"pam-pal"
+    $().humanize("ssl_error") #"Ssl Error"
+    $().humanize("abbc_error", flase) #abbc error
+    $().today()# 17th February 2015
+    $().today(1)#17-02-2015
+    $().today(2)#17/2/2015
+    $().today(3)#2-17-2015
+    $().next_day()#18th February 2015
+    $().prev_day()#16th February 2015
+    you can use these formats for this date as well.
    
    
     
