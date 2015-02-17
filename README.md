@@ -46,6 +46,7 @@ Just Begins to add some String Helper Methods for Jquery
     $().humanize("ssl_error") #"Ssl Error"
     $().humanize("abbc_error", flase) #abbc error
     $().today()# 17th February 2015
+    $().today(new Date(99, 5, 25)) # 25th May 1999
     $().today(1)#17-02-2015
     $().today(2)#17/2/2015
     $().today(3)#2-17-2015
