@@ -4,20 +4,46 @@
 * Made by Rajarshi
 * Under MIT License
 */
-
 (function($){
-	$.fn.showLinkLocation = function(){
+   
+  var $months = {1: "January", 2: "February", 3: "March",4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "Septembar", 10: "Octobar", 11: "Novembar", 12: "Decembar"} 
+  var $days   = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
 
-	  return this.each(function(){
-        var link = $(this);
-        link.append("(" + link.attr("href")+")");
-        debug(link);
-	  });
-	  
-	};
+  $.fn.extend({
+     next_day: function(date, format){
+      var d = (typeof date === "undefined") ? new Date() : date;
+      var day = d.getDate() + 1;
+      day = day.toString() + ordinal(parseInt(day))
+      var month = $months[d.getMonth() + 1];
+      var year  = d.getFullYear();
+      return formatDate(format, d, day, month, year);   
+     },
 
+     prev_day: function(format){
+      var d =  (typeof date === "undefined") ? new Date() : date;
+      var day = d.getDate() - 1;
+      day = day.toString() + ordinal(parseInt(day))
+      var month = $months[d.getMonth() + 1];
+      var year  = d.getFullYear();
+      return formatDate(format, d, day, month, year);   
+     }, 
 
-	$.fn.camelize = function(s){
+     today:  function(format){
+      var d = new Date();
+      var day = d.getDate();
+      day = day.toString() + ordinal(parseInt(day))
+      var month = $months[d.getMonth() + 1];
+      var year  = d.getFullYear();
+      return formatDate(format, d, day, month, year);   
+    },
+
+    next: function(){
+      alert(this.month);
+    }
+
+  });
+
+  $.fn.camelize = function(s){
     if(s.indexOf("_") > 0){
       return camelization(s);
     }
@@ -105,6 +131,25 @@
     }  
  
   };
+
+  function formatDate(format, d, day, month, year){
+    var t;
+    switch(format) {
+      case 1: 
+        t = (d.getDate() + 1).toString() + "-" + (d.getMonth() + 1).toString() + "-"+ year.toString();  
+        break;
+      case 2: 
+        t = (d.getDate() + 1).toString() + "/" + (d.getMonth() + 1).toString() + "/"+ year.toString();  
+        break;
+      case 3:
+        t = (d.getMonth() + 1).toString()+ "-" + (d.getDate() + 1).toString() + "-" + year.toString();  
+        break;
+      default:
+        t = day + "  " + month.toString() + " " +year.toString();
+
+    }
+    return t;
+  };
   
   function underscorize(s){
       var i=0;
@@ -118,6 +163,20 @@
       }
     return word.replace(" ", "_").replace("::", "/"); 
 
+  };
+
+  function human(s,capitalize){
+    s = str.replace(/\A_+/, '');
+    s = str.replace(/_id\z/, '');
+    s = str.replace('_', ' ');
+    s = str.toLowerCase();
+    if(capitalize){
+      s.replace(/\A\w/, function(letter){
+         letter.toUpperCase();
+      });
+     
+    }
+    return s; 
   };
 
   function demodule(s){
@@ -136,6 +195,5 @@
   }
 
 }(jQuery));
-
 
 
